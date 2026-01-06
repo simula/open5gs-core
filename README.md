@@ -7,3 +7,4 @@ Run install.sh to install the pre-requisites and packages and then run the confi
 Things to do:
 1. Make the IP additions to netplan automatic.
 2. Make the IP additions for the elements automatic.
+3. Make the script roaming-setup friendly once we have roaming between cores configured.
