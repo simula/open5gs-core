@@ -1,0 +1,21 @@
+logger:
+  file:
+    path: /var/log/open5gs/sgwc.log
+#  level: info   # fatal|error|warn|info(default)|debug|trace
+
+global:
+  max:
+    ue: 1024  # The number of UE can be increased depending on memory size.
+#    peer: 64
+
+sgwc:
+  gtpc:
+    server:
+      - address: SGWC_IP
+  pfcp:
+    server:
+      - address: SGWC_IP
+    client:
+      sgwu:
+        - address: SGWU_IP
+

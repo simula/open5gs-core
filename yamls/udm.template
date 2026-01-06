@@ -1,0 +1,39 @@
+logger:
+  file:
+    path: /var/log/open5gs/udm.log
+#  level: info   # fatal|error|warn|info(default)|debug|trace
+
+global:
+  max:
+    ue: 1024  # The number of UE can be increased depending on memory size.
+#    peer: 64
+
+udm:
+  hnet:
+    - id: 1
+      scheme: 1
+      key: /etc/open5gs/hnet/curve25519-1.key
+    - id: 2
+      scheme: 2
+      key: /etc/open5gs/hnet/secp256r1-2.key
+    - id: 3
+      scheme: 1
+      key: /etc/open5gs/hnet/curve25519-3.key
+    - id: 4
+      scheme: 2
+      key: /etc/open5gs/hnet/secp256r1-4.key
+    - id: 5
+      scheme: 1
+      key: /etc/open5gs/hnet/curve25519-5.key
+    - id: 6
+      scheme: 2
+      key: /etc/open5gs/hnet/secp256r1-6.key
+  sbi:
+    server:
+      - address: UDM_IP
+        port: 7777
+    client:
+      nrf:
+        - uri: http://NRF_IP:7777
+      scp:
+        - uri: http://SCP_IP:7777

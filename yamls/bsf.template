@@ -1,0 +1,20 @@
+logger:
+  file:
+    path: /var/log/open5gs/bsf.log
+#  level: info   # fatal|error|warn|info(default)|debug|trace
+
+global:
+  max:
+    ue: 1024  # The number of UE can be increased depending on memory size.
+#    peer: 64
+
+bsf:
+  sbi:
+    server:
+      - address: BSF_IP
+        port: 7777
+    client:
+      nrf:
+        - uri: http://NRF_IP:7777
+      scp:
+        - uri: http://SCP_IP:7777

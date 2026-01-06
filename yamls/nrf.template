@@ -1,0 +1,20 @@
+logger:
+  file:
+    path: /var/log/open5gs/nrf.log
+#  level: info   # fatal|error|warn|info(default)|debug|trace
+
+global:
+  max:
+    ue: 1024  # The number of UE can be increased depending on memory size.
+#    peer: 64
+
+nrf:
+  serving:  # 5G roaming requires PLMN in NRF
+    - plmn_id:
+        mcc: MCC
+        mnc: MNC
+  sbi:
+    server:
+      - address: NRF_IP
+        port: 7777
+

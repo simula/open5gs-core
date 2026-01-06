@@ -1,0 +1,48 @@
+logger:
+  file:
+    path: /var/log/open5gs/sepp2.log
+#  level: info   # fatal|error|warn|info(default)|debug|trace
+
+global:
+  max:
+    ue: 1024  # The number of UE can be increased depending on memory size.
+#    peer: 64
+
+sepp:
+  default:
+    tls:
+      server:
+        private_key: /etc/open5gs/tls/sepp2.key
+        cert: /etc/open5gs/tls/sepp2.crt
+#        sslkeylogfile: /var/log/open5gs/tls/sepp2-server-sslkeylog.log
+      client:
+        cacert: /etc/open5gs/tls/ca.crt
+#        sslkeylogfile: /var/log/open5gs/tls/sepp2-client-sslkeylog.log
+  sbi:
+    server:
+      - address: SEPP2_IP
+        port: 7777
+    client:
+      nrf:
+        - uri: http://NRF_IP:7777
+      scp:
+        - uri: http://SCP_IP:7777
+  n32:
+    server:
+      - sender: sepp2.localdomain
+        scheme: https
+        address: 127.0.2.251
+        port: 7777
+        n32f:
+          scheme: https
+          address: 127.0.2.252
+          port: 7777
+    client:
+      sepp:
+        - receiver: sepp1.localdomain
+          uri: https://sepp1.localdomain:7777
+          resolve: 127.0.1.251
+          n32f:
+            uri: https://sepp1.localdomain:7777
+            resolve: 127.0.1.252
+

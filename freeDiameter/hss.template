@@ -1,0 +1,17 @@
+Identity = "hss.localdomain";
+Realm = "localdomain";
+ListenOn = "HSS_IP";
+TLS_Cred = "/etc/open5gs/tls/hss.crt", "/etc/open5gs/tls/hss.key";
+TLS_CA = "/etc/open5gs/tls/ca.crt";
+NoRelay;
+
+LoadExtension = "/usr/lib/x86_64-linux-gnu/freeDiameter/dbg_msg_dumps.fdx" : "0x8888";
+LoadExtension = "/usr/lib/x86_64-linux-gnu/freeDiameter/dict_rfc5777.fdx";
+LoadExtension = "/usr/lib/x86_64-linux-gnu/freeDiameter/dict_mip6i.fdx";
+LoadExtension = "/usr/lib/x86_64-linux-gnu/freeDiameter/dict_nasreq.fdx";
+LoadExtension = "/usr/lib/x86_64-linux-gnu/freeDiameter/dict_nas_mipv6.fdx";
+LoadExtension = "/usr/lib/x86_64-linux-gnu/freeDiameter/dict_dcca.fdx";
+LoadExtension = "/usr/lib/x86_64-linux-gnu/freeDiameter/dict_dcca_3gpp.fdx";
+
+ConnectPeer = "mme.localdomain" { ConnectTo = "MME_IP"; No_TLS; };
+
