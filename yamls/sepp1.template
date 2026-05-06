@@ -28,12 +28,12 @@ sepp:
   n32:
     server:
       - sender: sepp1.localdomain
-        scheme: https
-        address: 127.0.1.251
+        # scheme: https
+        address: SEPP2_IP
         port: 7777
         n32f:
-          scheme: https
-          address: 127.0.1.252
+          # scheme: https
+          address: SEPP3_IP
           port: 7777
     client:
       sepp:
