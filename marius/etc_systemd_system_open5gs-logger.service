@@ -1,0 +1,11 @@
+[Unit]
+Description=Open5GS Dashboard Logger
+After=network.target mongod.service
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/open5gs/dashboard-logger.py
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
