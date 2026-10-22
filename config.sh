@@ -59,8 +59,8 @@ echo
 
 # Restart the daemons so that they can read the new config files
 echo "Restarting all daemons"
-chmod +x restart-all-open5gs.sh
-./restart-all-open5gs.sh
+chmod +x control-scripts/5g-services.sh
+./control-scripts/5g-services.sh restart
 echo "These open5gs daemons are currently running"
 ps ax|grep open5gs | grep -v grep
 echo
