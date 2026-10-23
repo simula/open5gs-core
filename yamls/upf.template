@@ -19,10 +19,10 @@ upf:
     server:
       - address: UPF_IP
   session:
-    - subnet: 10.45.0.0/16
-      gateway: 10.45.0.1
-    - subnet: 2001:db8:cafe::/48
-      gateway: 2001:db8:cafe::1
+    - subnet: TUNSUBNETV4
+      gateway: TUNGWV4
+    - subnet: TUNSUBNETV6
+      gateway: TUNGWV6
   metrics:
     server:
       - address: UPF_IP
